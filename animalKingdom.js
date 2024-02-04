@@ -1,7 +1,7 @@
-class AnimalKingdom {
+class AnimalKingdom {                           //this is the base abstract class
     constructor(animal, eyes, limbs, size) {
         if(this.constructor === AnimalKingdom)
-        throw new Error("Class AnimalKingdom cannot be called or instantiated")
+        throw new Error("Class AnimalKingdom cannot be called or instantiated")    // to ensure abstract class cannot be initialized
 
         this.eyes = eyes
         this.limbs = limbs
@@ -45,10 +45,10 @@ class AnimalKingdom {
         }
     }
 
-    noBackbone() {
+    // noBackbone() {
 
 
-    }
+    // }
 
 
 
@@ -151,12 +151,22 @@ class Mammals extends AnimalKingdom {
 
 }
 
-const animal = new Fish(5, 6, "hfrr")
+const athropod = new Arthropoda()
 // animal.bloodValue()
 // animal.backbone(true)
-animal.animalDetails()
+athropod.animalDetails()
 
-const mich = new Aves()
-mich.animalDetails()
+const fish = new Fish()
+fish.animalDetails()
 
-const 
+const amphibia = new Amphibia()
+amphibia.animalDetails()
+
+const reptile = new Reptiles()
+reptile.animalDetails()
+
+const aves = new Aves()
+aves.animalDetails()
+
+const mammal = new Mammals()
+mammal.animalDetails()
