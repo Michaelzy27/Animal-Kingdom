@@ -9,23 +9,23 @@ class AnimalKingdom {                           //this is the base abstract clas
         this.animal = animal
     }
 
-    #animalName() {
+    #animalName() {                 // a private function that sets name of animal
         return this.animal
     }
 
-    #numberOfEyes() {
+    #numberOfEyes() {              // a private functions that sets number of eyes for the animal
         return this.eyes
     }
 
-    #numberOfLimbs() {
+    #numberOfLimbs() {            // a private function that sets the number of limbs for the animal
         return this.limbs
     }
 
-    #animalSize() {
+    #animalSize() {              // a private function that states the size of the animal
         return this.size
     }
 
-    bloodValue(value) {
+    bloodValue(value) {         //to get the type of blood. by default uses conditional statement to know, based on variable passed to it. unless overwritten
         if(value === true) {
             this.blood = "cold blooded"
         } else {
@@ -37,7 +37,7 @@ class AnimalKingdom {                           //this is the base abstract clas
 
     // }
 
-    backbone(value) {
+    backbone(value) {       //to know whether it has backbone. By default uses conditional statement to check when called
         if(value === true) {
             this.bone = "has backbone"
         } else {
@@ -52,7 +52,7 @@ class AnimalKingdom {                           //this is the base abstract clas
 
 
 
-    animalDetails(bloodvalue, backbone) {
+    animalDetails(bloodvalue, backbone) {   // to print out the details off each animal (instance) of the class
         this.bloodValue()
         this.backbone()
         console.log(this.#animalName() + " has " + this.#numberOfEyes() + " eyes, " + this.#numberOfLimbs() + " limbs, and is " + this.#animalSize() + " in size")
@@ -67,11 +67,11 @@ class Arthropoda extends AnimalKingdom {
 
     }
 
-    bloodValue() {
+    bloodValue() {                       //overwrites the bloodValue function in the base class
         this.blood = "cold-blooded"
     }
 
-    backbone() {
+    backbone() {                        //overwrites the backbone function in the base class
         this.bone = "has no backbone"
     }
 
@@ -82,11 +82,11 @@ class Fish extends AnimalKingdom {
         super("Fish", 2, 2, "small")
     }
 
-    bloodValue() {
+    bloodValue() {                     //overwrites the bloodValue function in the base class
         this.blood = "cold-blooded"
     }
 
-    backbone() {
+    backbone() {                       //overwrites the backbone function in the base class
         this.bone = "has backbone"
     }
 
@@ -151,6 +151,8 @@ class Mammals extends AnimalKingdom {
 
 }
 
+
+//Below, all details ae=re gotten for all six classes of animal kingdom using the animalDetails() function
 const athropod = new Arthropoda()
 // animal.bloodValue()
 // animal.backbone(true)
